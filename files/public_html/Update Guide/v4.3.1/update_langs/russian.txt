@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `russian` = 'Чтобы продавать свой контент и публикации, начните с создания нескольких пакетов.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `russian` = 'Вы еще не подписались ни на одного пользователя.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `russian` = 'Пожалуйста, добавьте новый адрес ниже, чтобы продолжить' WHERE `lang_key` = 'please_add_new_address';

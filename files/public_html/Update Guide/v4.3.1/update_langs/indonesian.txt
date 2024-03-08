@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `indonesian` = 'Untuk menjual konten dan postingan Anda, mulailah dengan membuat beberapa paket.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `indonesian` = 'Anda belum berlangganan ke pengguna mana pun.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `indonesian` = 'Silakan tambahkan alamat baru di bawah untuk melanjutkan' WHERE `lang_key` = 'please_add_new_address';

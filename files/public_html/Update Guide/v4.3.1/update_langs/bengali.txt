@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `bengali` = 'আপনার সামগ্রী এবং পোস্ট বিক্রি করার জন্য, কয়েকটি প্যাকেজ তৈরি করে শুরু করুন।' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `bengali` = 'আপনি এখনও কোনো ব্যবহারকারীর সদস্যতা নেননি.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `bengali` = 'চালিয়ে যেতে নিচে একটি নতুন ঠিকানা যোগ করুন' WHERE `lang_key` = 'please_add_new_address';

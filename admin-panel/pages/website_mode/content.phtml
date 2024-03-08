@@ -1,0 +1,761 @@
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+$data =$db->get(T_ModelWebsite);
+$file =$data[0];
+?>
+
+<div class="container-fluid">
+    <div>
+        <h3>وضع الموقع</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">الرئسية</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">إعدادات</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">وضع الموقع</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- Vertical Layout -->
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body pb-1">
+                    <div class="api-settings-alert"></div>
+                    <form class="api-settings"   method="POST" id="settingsForm">
+                        <div class="form-group float-right switcher">
+                            <input type="hidden" name="website_mode" value="0" />
+                            <input type="checkbox" name="website_mode" id="chck-website_mode" value="facebook"
+                                <?php echo ($wo['config']['website_mode'] == 'facebook') ? 'checked': '';?>>
+                            <label for="chck-website_mode" class="check-trail"><span
+                                    class="check-handler"></span></label>
+                        </div>
+                        <div class="">
+                            <label for="website_mode" class="main-label">وضع الافتراضي (neomrs)</label>
+                        </div>
+                        
+                        
+
+                        <div class="clearfix"></div>
+                        <ul class="row list-unstyled mb-0">
+                
+                            <li class="col-6">
+                                <input type="checkbox" id="is_sticks" name="is_sticks" <?php echo ($file->is_sticks == 1) ? 'checked': '';?>>
+                                <label for="movies"> الوخزات</label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_games" name="is_games" <?php echo ($file->is_games == 1) ? 'checked': '';?>>
+                                <label for="movies"> ألعاب</label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_movies" name="is_movies" <?php echo ($file->is_movies == 1) ? 'checked': '';?>>
+                                <label for="movies"> أفلام</label>
+                            </li>
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_common_things" name="is_common_things" <?php echo ($file->is_common_things == 1) ? 'checked': '';?>>
+                                <label for="movies"> الأشياء المشتركة</label>
+                            </li>
+
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_memories" name="is_memories" <?php echo ($file->is_memories == 1) ? 'checked': '';?>>
+                                <label for="movies">ذكريات</label>
+                            </li>
+
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_events" name="is_events" <?php echo ($file->is_events == 1) ? 'checked': '';?>>
+                                <label for="movies">الأحداث</label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_blogs" name="is_blogs" <?php echo ($file->is_blogs == 1) ? 'checked': '';?>>
+                                <label for="movies">المدونات</label>
+                            </li>
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_jobs" name="is_jobs" <?php echo ($file->is_jobs == 1) ? 'checked': '';?>>
+                                <label for="movies">وظائف</label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_finance" name="is_finance" <?php echo ($file->is_finance == 1) ? 'checked': '';?>>
+                                <label for="movies">التمويل</label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_store" name="is_store" <?php echo ($file->is_store == 1) ? 'checked': '';?>>
+                                <label for="movies">المتجر</label>
+                            </li>
+
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_user_status" name="is_user_status" <?php echo ($file->is_user_status == 1) ? 'checked': '';?>>
+                                <label for="movies">حالة المستخدم</label>
+                            </li>
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_forum" name="is_forum" <?php echo ($file->is_forum == 1) ? 'checked': '';?>>
+                                <label for="movies">المنتدى</label>
+                            </li>
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_pages" name="is_pages" <?php echo ($file->is_pages == 1) ? 'checked': '';?>>
+                                <label for="movies">الصفحات</label>
+                            </li>
+
+                            <li class="col-6">
+                                <input type="checkbox" id="is_groups" name="is_groups" <?php echo ($file->is_groups == 1) ? 'checked': '';?>>
+                                <label for="movies">مجموعات</label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_stories" name="is_stories" <?php echo ($file->is_stories == 1) ? 'checked': '';?>>
+                                <label for="movies">الحالات</label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_trending" name="is_trending" <?php echo ($file->is_trending == 1) ? 'checked': '';?>>
+                                <label for="movies">الهاشتاغات </label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_album" name="is_album" <?php echo ($file->is_album == 1) ? 'checked': '';?>>
+                                <label for="is_album">الألبوم </label>
+                            </li>
+                            <li class="col-6">
+                                <input type="checkbox" id="is_activitie" name="is_activitie" <?php echo ($file->is_activitie == 1) ? 'checked': '';?>>
+                                <label for="is_activitie">آخر النشاطات </label>
+                            </li>
+                            
+
+                            
+                            
+                        </ul>
+
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="hash_id" value="<?php echo Wo_CreateSession();?>">
+
+                        <button type="submit" class="btn btn-primary m-t-15 waves-effect">Save</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body pb-1">
+                    <div class="api-settings-alert"></div>
+                    <form class="api-settings" method="POST">
+                        <div class="form-group float-right switcher">
+                            <input type="hidden" name="website_mode" value="0" />
+                            <input type="checkbox" name="website_mode" id="chck-website_mode-linkedin" value="linkedin"
+                                <?php echo ($wo['config']['website_mode'] == 'linkedin') ? 'checked': '';?>>
+                            <label for="chck-website_mode-linkedin" class="check-trail"><span
+                                    class="check-handler"></span></label>
+                        </div>
+                        <div class="">
+                            <label for="website_mode" class="main-label">وضع LinkedIn (الوظائف)</label>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <ul class="row list-unstyled mb-0">
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> عصي</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ألعاب</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> أفلام</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأشياء المشتركة</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ذكريات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> الأحداث</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> المدونات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> وظائف (ممتدة)</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> التمويل</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المتجر</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> حالة المستخدم</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> المنتدى</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> الصفحات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> مجموعات</li>
+                                    
+                        </ul>
+
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="hash_id" value="<?php echo Wo_CreateSession();?>">
+                        <!-- <button type="submit" class="btn btn-primary m-t-15 waves-effect">Save</button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body pb-1">
+                    <div class="api-settings-alert"></div>
+                    <form class="api-settings" method="POST">
+                        <div class="form-group float-right switcher">
+                            <input type="hidden" name="website_mode" value="0" />
+                            <input type="checkbox" name="website_mode" id="chck-website_mode-instagram"
+                                value="instagram"
+                                <?php echo ($wo['config']['website_mode'] == 'instagram') ? 'checked': '';?>>
+                            <label for="chck-website_mode-instagram" class="check-trail"><span
+                                    class="check-handler"></span></label>
+                        </div>
+                        <div class="">
+                            <label for="website_mode" class="main-label">وضع Instagram</label>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <ul class="row list-unstyled mb-0">
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> عصي</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ألعاب</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> أفلام</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأشياء المشتركة</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ذكريات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأحداث</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المدونات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> وظائف</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> التمويل</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> المتجر</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> User Status</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المنتدى</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الصفحات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> Groups</li>
+                        </ul>
+
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="hash_id" value="<?php echo Wo_CreateSession();?>">
+                        <!-- <button type="submit" class="btn btn-primary m-t-15 waves-effect">Save</button> -->
+                    </form>
+                </div>
+                <!-- <div class="update-soon">Coming on v4.1</div> -->
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body pb-1">
+                    <div class="api-settings-alert"></div>
+                    <form class="api-settings" method="POST">
+                        <div class="form-group float-right switcher">
+                            <input type="hidden" name="website_mode" value="0" />
+                            <input type="checkbox" name="website_mode" id="chck-website_mode-twitter" value="twitter"
+                                <?php echo ($wo['config']['website_mode'] == 'twitter') ? 'checked': '';?>>
+                            <label for="chck-website_mode-twitter" class="check-trail"><span
+                                    class="check-handler"></span></label>
+                        </div>
+                        <div class="">
+                            <label for="website_mode" class="main-label">وضع X (Twitter)</label>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <ul class="row list-unstyled mb-0">
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> عصي</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ألعاب</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> أفلام</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأشياء المشتركة</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ذكريات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأحداث</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المدونات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> وظائف</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> التمويل</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المتجر</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> حالة المستخدم</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> المنتدى</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> الصفحات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#4caf50"
+                                        d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg> مجموعات</li>
+                        </ul>
+
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="hash_id" value="<?php echo Wo_CreateSession();?>">
+                    </form>
+                </div>
+                <!-- <div class="update-soon">Coming on v4.4</div> -->
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body pb-1">
+                    <div class="api-settings-alert"></div>
+                    <form class="api-settings" method="POST">
+                        <div class="form-group float-right switcher">
+                            <input type="hidden" name="website_mode" value="0" />
+                            <input type="checkbox" name="website_mode" id="chck-website_mode-askfm" value="askfm"
+                                <?php echo ($wo['config']['website_mode'] == 'askfm') ? 'checked': '';?>>
+                            <label for="chck-website_mode-askfm" class="check-trail"><span
+                                    class="check-handler"></span></label>
+                        </div>
+                        <div class="">
+                            <label for="website_mode" class="main-label">ASKFM وضع</label>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <ul class="row list-unstyled mb-0">
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> عصي</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ألعاب</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> أفلام</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأشياء المشتركة</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ذكريات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأحداث</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المدونات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> وظائف</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> التمويل</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المتجر</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> حالة المستخدم</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المنتدى</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الصفحات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> مجموعات</li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="hash_id" value="<?php echo Wo_CreateSession();?>">
+                    </form>
+                </div>
+                <!-- <div class="update-soon">Coming on v4.4</div> -->
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body pb-1">
+                    <div class="api-settings-alert"></div>
+                    <form class="api-settings" method="POST">
+                        <div class="form-group float-right switcher">
+                            <input type="hidden" name="website_mode" value="0" />
+                            <input type="checkbox" name="website_mode" id="chck-website_mode-patreon" value="patreon"
+                                <?php echo ($wo['config']['website_mode'] == 'patreon') ? 'checked': '';?>>
+                            <label for="chck-website_mode-patreon" class="check-trail"><span
+                                    class="check-handler"></span></label>
+                        </div>
+                        <div class="">
+                            <label for="website_mode" class="main-label">TikTok وضع</label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul class="row list-unstyled mb-0">
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> عصي</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ألعاب</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> أفلام</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأشياء المشتركة</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> ذكريات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الأحداث</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المدونات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> وظائف</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> التمويل</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المتجر</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> حالة المستخدم</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> المنتدى</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> الصفحات</li>
+                            <li class="col-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 24 24" class="mt-n1">
+                                    <path fill="#ff6458"
+                                        d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                    </svg> مجموعات</li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="hash_id" value="<?php echo Wo_CreateSession();?>">
+                    </form>
+                </div>
+                <!-- <div class="update-soon">Coming on v4.5</div> -->
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+    <!-- #END# Vertical Layout -->
+    <script>
+        $(function () {
+            $('.switcher input[type=checkbox]').click(function () {
+                // setToTrue = 0;
+                // if ($(this).is(":checked") === true) {
+                //     setToTrue = 1;
+                // }
+                for (var i = 0; i < $('input[type=checkbox]').length; i++) {
+                    if ($($('.switcher input[type=checkbox]')[i]).val() !== $(this).val()) {
+                        $($('.switcher input[type=checkbox]')[i]).prop('checked', false);
+                    }
+                }
+                var configName = $(this).attr('name');
+                var hash_id = $('input[name=hash_id]').val();
+                var objData = {};
+                objData[configName] = $(this).val();
+                objData['hash_id'] = hash_id;
+                $.post(Wo_Ajax_Requests_File() + '?f=admin_setting&s=update_general_setting', objData);
+            });
+
+            var setTimeOutColor = setTimeout(function () {});
+            $('select').on('change', function () {
+                clearTimeout(setTimeOutColor);
+                var thisElement = $(this);
+                var configName = thisElement.attr('name');
+                var hash_id = $('input[name=hash_id]').val();
+                var objData = {};
+                objData[configName] = this.value;
+                objData['hash_id'] = hash_id;
+                thisElement.addClass('warning');
+                $.post(Wo_Ajax_Requests_File() + '?f=admin_setting&s=update_general_setting', objData,
+                    function (data) {
+                        if (data.status == 200) {
+                            thisElement.removeClass('warning');
+                            thisElement.addClass('success');
+                        } else {
+                            thisElement.addClass('error');
+                        }
+                        var setTimeOutColor = setTimeout(function () {
+                            thisElement.removeClass('success');
+                            thisElement.removeClass('warning');
+                            thisElement.removeClass('error');
+                        }, 2000);
+                    });
+            });
+            $('input[type=text], input[type=number], textarea').on('input', delay(function () {
+                clearTimeout(setTimeOutColor);
+                var thisElement = $(this);
+                var configName = thisElement.attr('name');
+                var hash_id = $('input[name=hash_id]').val();
+                var objData = {};
+                objData[configName] = this.value;
+                objData['hash_id'] = hash_id;
+                thisElement.addClass('warning');
+                if (configName == 'googleAnalytics') {
+                    objData['googleAnalytics_en'] = btoa($('#googleAnalytics').val());
+                    objData['googleAnalytics'] = "";
+                }
+                $.post(Wo_Ajax_Requests_File() + '?f=admin_setting&s=update_general_setting',
+                    objData,
+                    function (data) {
+                        if (data.status == 200) {
+                            thisElement.removeClass('warning');
+                            thisElement.addClass('success');
+                        } else {
+                            thisElement.addClass('error');
+                        }
+                        var setTimeOutColor = setTimeout(function () {
+                            thisElement.removeClass('success');
+                            thisElement.removeClass('warning');
+                            thisElement.removeClass('error');
+                        }, 2000);
+                        // thisElement.focus();
+                    });
+            }, 500));
+        });
+    </script>
+            <script>
+        // Wait for the DOM to be ready
+        $(document).ready(function() {
+            // Attach a submit event listener to the form
+            $('#settingsForm').submit(function(event) {
+                // Prevent the default form submission
+                event.preventDefault();
+
+                // Use jQuery to serialize the form data
+                var formData = $(this).serialize();
+
+                // Make an AJAX request using jQuery
+                $.ajax({
+                    type: 'POST',
+                    // url: Wo_Ajax_Requests_File() + '?f=post',
+                    url: Wo_Ajax_Requests_File() + '?f=post',
+
+                    data: formData,
+                    success: function(response) {
+                        // The request was successful, handle the response here
+                        // console.log("Dddd");
+                        window.location.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        // The request failed
+                        console.error('Request failed with status', status, 'and error', error);
+                    }
+                });
+            });
+        });
+
+    </script>
+    <style media="screen">
+        .update-soon {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            font-size: 25px;
+        }
+    </style>

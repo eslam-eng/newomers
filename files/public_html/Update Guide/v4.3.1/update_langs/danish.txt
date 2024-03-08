@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `danish` = 'For at sælge dit indhold og dine indlæg, start med at oprette et par pakker.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `danish` = 'Du har ikke abonneret på nogen brugere endnu.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `danish` = 'Tilføj venligst en ny adresse nedenfor for at fortsætte' WHERE `lang_key` = 'please_add_new_address';

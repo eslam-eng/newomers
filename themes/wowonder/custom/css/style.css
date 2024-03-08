@@ -1,0 +1,49 @@
+/* 
+
+Add here your custom css styles Example: p { text-align: center; color: red; } 
+
+*/
+/* Modified By A.Y Start*/
+.wow_pops_head{
+    background: transparent !important;
+    /* background: #000000 !important; */
+}
+.social-custom-btn{
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-bottom: 20px !important;
+}
+.social-custom-btn:last-child{
+    margin-bottom: 0px !important;
+}
+.social-custom-btn a, .social-custom-btn > div{
+    display: inline-block !important;
+    text-align: center;
+}
+.wo_user_profile .user-bottom-nav li .menuactive svg path{
+    fill:#000;
+}
+.searchbox_container_custom{
+    display: none !important;
+}
+#wo_home_search_custom{
+    margin: 4px auto;
+    border: 0px;
+}
+.searchbox_container_custom .search-container form{
+    border: 0px !important;
+    padding: 0px !important;
+}
+
+@media (max-width: 767px){
+    .searchbox_container_custom{
+        display: block !important;
+    }
+    .navbar-default{
+        height: 96px !important;
+    }
+    .page-margin{
+        margin-top: 70px !important;
+    }
+}
+/* Modified By A.Y End*/

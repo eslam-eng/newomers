@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `japanese` = 'コンテンツや投稿を販売するには、まずいくつかのパッケージを作成します。' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `japanese` = 'まだユーザーを購読していません。' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `japanese` = '続行するには、下に新しいアドレスを追加してください' WHERE `lang_key` = 'please_add_new_address';

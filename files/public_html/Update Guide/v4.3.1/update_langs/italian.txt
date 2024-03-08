@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `italian` = 'Per vendere i tuoi contenuti e i tuoi post, inizia creando alcuni pacchetti.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `italian` = 'Non hai ancora iscritto nessun utente.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `italian` = 'Aggiungi un nuovo indirizzo qui sotto per continuare' WHERE `lang_key` = 'please_add_new_address';

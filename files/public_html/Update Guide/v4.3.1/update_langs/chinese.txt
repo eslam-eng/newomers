@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `chinese` = '为了销售您的内容和帖子，请首先创建一些包。' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `chinese` = '您还没有订阅任何用户。' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `chinese` = '请在下面添加新地址以继续' WHERE `lang_key` = 'please_add_new_address';

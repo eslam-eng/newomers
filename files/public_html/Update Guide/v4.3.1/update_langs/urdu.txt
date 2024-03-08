@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `urdu` = 'اپنے مواد اور پوسٹس کو بیچنے کے لیے، چند پیکجز بنا کر شروع کریں۔' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `urdu` = 'آپ نے ابھی تک کسی صارف کو سبسکرائب نہیں کیا ہے۔' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `urdu` = 'جاری رکھنے کے لیے براہ کرم ذیل میں ایک نیا پتہ شامل کریں۔' WHERE `lang_key` = 'please_add_new_address';

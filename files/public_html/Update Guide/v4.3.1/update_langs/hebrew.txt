@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `hebrew` = 'על מנת למכור את התוכן והפוסטים שלך, התחל ביצירת מספר חבילות.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `hebrew` = 'עדיין לא נרשמת לאף משתמש.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `hebrew` = 'אנא הוסף כתובת חדשה למטה כדי להמשיך' WHERE `lang_key` = 'please_add_new_address';

@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `filipino` = 'Upang maibenta ang iyong nilalaman at mga post, magsimula sa pamamagitan ng paglikha ng ilang mga pakete.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `filipino` = 'Hindi ka pa nag-subscribe sa sinumang user.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `filipino` = 'Mangyaring magdagdag ng bagong address sa ibaba upang magpatuloy' WHERE `lang_key` = 'please_add_new_address';

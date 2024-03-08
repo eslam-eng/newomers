@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `swedish` = 'För att sälja ditt innehåll och dina inlägg, börja med att skapa några paket.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `swedish` = 'Du har inte prenumererat på några användare än.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `swedish` = 'Vänligen lägg till en ny adress nedan för att fortsätta' WHERE `lang_key` = 'please_add_new_address';

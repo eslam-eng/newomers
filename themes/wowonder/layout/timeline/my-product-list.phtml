@@ -1,0 +1,27 @@
+<?php 
+	$products = Wo_GetProducts_Custom($wo['user_profile']['user_id']);
+
+	if(count($products) == 0){
+		echo '<h2><div class="no-activities-profile text-center">' . $wo['lang']['no_available_products'] . '</div><h2>';
+	}else{
+		foreach ($products as $key => $elem) {
+
+		?>
+
+			<div class='wow_side_prods_prnt'>
+				<div class='wow_side_prods'>
+					<a href='<?php echo $elem['url']; ?>' data-ajax='?link1=post&id=<?php echo $elem['seo_id']; ?>'>
+						<div class='avatar'>
+							<img src='<?php echo $elem['images'][0]['image_org']; ?>' alt='<?php echo $elem['name']; ?> Profile Picture' />
+						</div>
+						<div class='produc_info'>
+							<span title='<?php echo $elem['name']; ?>'><?php echo $elem['name']; ?></span>
+							<h4><?php echo $wo['currencies'][$elem['currency']]['symbol']; ?>  <?php echo$elem['price']; ?></h4>
+						</div>
+					</a>
+				</div>
+			</div>
+	<?php } 
+	}
+		
+?>

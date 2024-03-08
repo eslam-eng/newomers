@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `persian` = 'برای فروش محتوا و پست های خود، با ایجاد چند بسته شروع کنید.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `persian` = 'شما هنوز برای هیچ کاربری مشترک نشده اید.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `persian` = 'لطفاً برای ادامه یک آدرس جدید در زیر اضافه کنید' WHERE `lang_key` = 'please_add_new_address';

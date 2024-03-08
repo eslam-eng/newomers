@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `dutch` = 'Om uw inhoud en berichten te verkopen, begint u met het maken van een paar pakketten.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `dutch` = 'U heeft zich nog niet op een gebruiker geabonneerd.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `dutch` = 'Voeg hieronder een nieuw adres toe om door te gaan' WHERE `lang_key` = 'please_add_new_address';

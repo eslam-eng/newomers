@@ -1,0 +1,3 @@
+UPDATE `Wo_Langs` SET `croatian` = 'Kako biste prodali svoj sadržaj i postove, počnite s stvaranjem nekoliko paketa.' WHERE `lang_key` = 'in_order_to_sell_your_content';
+UPDATE `Wo_Langs` SET `croatian` = 'Još se niste pretplatili ni na jednog korisnika.' WHERE `lang_key` = 'subscribe_to_any_users_yet';
+UPDATE `Wo_Langs` SET `croatian` = 'Za nastavak dodajte novu adresu u nastavku' WHERE `lang_key` = 'please_add_new_address';
