@@ -85,10 +85,10 @@ if ($wo['loggedin'] == true && !isset($_GET['link1'])) {
     $page = $_GET['link1'];
 }
 if ((!isset($_GET['link1']) && $wo['loggedin'] == false) || (isset($_GET['link1']) && $wo['loggedin'] == false && $page == 'home')) {
-    // if (!$wo['config']['directory_system']) {
-    //     header("Location: " . Wo_SeoLink('index.php?link1=welcome'));
-    //     exit();
-    // }
+     if (!$wo['config']['directory_system']) {
+         header("Location: " . Wo_SeoLink('index.php?link1=welcome'));
+         exit();
+     }
 
     $landingPage = $wo['config']['directory_landing_page'];
     if($landingPage == 'home') {

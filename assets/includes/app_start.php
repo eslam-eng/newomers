@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(0);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(1);
 @ini_set("max_execution_time", 0);
 @ini_set("memory_limit", "-1");
 @set_time_limit(0);
@@ -100,7 +100,6 @@ $wo["role"]              = $data[0];
 
 
 $config["s3_site_url_2"]   = $s3_site_url_2;
-$wo["config"]              = $config;
 $wo["config"]              = $config;
 $ccode                     = Wo_CustomCode("g");
 $ccode                     = is_array($ccode) ? $ccode : array();

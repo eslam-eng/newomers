@@ -89,8 +89,8 @@ if ($type == 'get_post_data') {
             echo json_encode($json_error_data, JSON_PRETTY_PRINT);
             exit();
         } else {
-            $post_id   = Wo_Secure($_POST['post_id']);
-            $post_data   = Wo_PostData($post_id);
+            $post_id = Wo_Secure($_POST['post_id']);
+            $post_data = Wo_PostData($post_id);
             if (empty($post_data)) {
                 $json_error_data = array(
                     'api_status' => '400',

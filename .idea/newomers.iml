@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/assets/libraries" isTestSource="false" packagePrefix="MineSQL" />
+      <sourceFolder url="file://$MODULE_DIR$/assets/libraries/SimpleImage-master/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/assets/libraries/iyzipay/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/assets/libraries/social-login" isTestSource="false" packagePrefix="Hybridauth" />
+      <sourceFolder url="file://$MODULE_DIR$/files/public_html/Update Guide/v3.1/assets/libraries/social-login" isTestSource="false" packagePrefix="Hybridauth" />
+      <sourceFolder url="file://$MODULE_DIR$/files/public_html/Update Guide/v3.2/assets/libraries/social-login" isTestSource="false" packagePrefix="Hybridauth" />
+      <sourceFolder url="file://$MODULE_DIR$/files/public_html/Update Guide/v4.0.1/assets/libraries/iyzipay/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

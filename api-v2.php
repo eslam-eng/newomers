@@ -1,9 +1,11 @@
 <?php
 // API v2 is not yet finished, you have to use the old API version.
+
 header_remove('Server');
 header("Content-type: application/json");
 require('assets/init.php');
 require('api/v2/init.php');
+var_dump('eeeeeeeeeeeeeeee');
 $wo['loggedin'] = false;
 $response_data  = array();
 $error_code     = 0;
