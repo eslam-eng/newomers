@@ -6159,7 +6159,7 @@ function Wo_PostData($post_id, $placement = '', $limited = '', $comments_limit =
         $story['postFeelingIcon'] = $wo['feelingIcons'][$story['postFeeling']];
     }
     if ($wo['config']['useSeoFrindly'] == 1) {
-        $story['url'] = Wo_SeoLink('index.php?link1=post&id=' . $story['id']) . '_' . Wo_SlugPost($story['Orginaltext']);
+        $story['url'] = Wo_SeoLink('index.php?link1=post&id=' . $story['id']) . '_' . hash('sha256', $story['Orginaltext']) . ".html";
         $story['seo_id'] = $story['id'] . '_' . Wo_SlugPost($story['Orginaltext']);
     } else {
         $story['url'] = Wo_SeoLink('index.php?link1=post&id=' . $story['id']);
@@ -6572,12 +6572,14 @@ function Wo_GetPostPublisherBox($user_id = 0, $recipient_id = 0)
     }
 }
 
-function Wo_GetPosts($data = array('filter_by' => 'all', 'after_post_id' => 0, 'page_id' => 0, 'group_id' => 0, 'publisher_id' => 0, 'limit' => 5, 'event_id' => 0, 'ad-id' => 0, 'is_reel' => 'only', 'not_in' => array(), 'not_monetization' => false))
+function Wo_GetPosts($data = array('filter_by' => 'all', 'pin' =>0, 'after_post_id' => 0, 'page_id' => 0, 'group_id' => 0, 'publisher_id' => 0, 'limit' => 5, 'event_id' => 0, 'ad-id' => 0, 'is_reel' => 'only', 'not_in' => array(), 'not_monetization' => false))
 {
     global $wo, $sqlConnect;
     if (empty($data['filter_by'])) {
         $data['filter_by'] = 'all';
     }
+    if(!empty($data) && $data['pin'] == 1)
+        return Wo_GetPinnedPost($data['publisher_id']);
     $subquery_one = " `id` > 0 ";
     if (!empty($data['after_post_id']) && is_numeric($data['after_post_id']) && $data['after_post_id'] > 0) {
         $data['after_post_id'] = Wo_Secure($data['after_post_id']);

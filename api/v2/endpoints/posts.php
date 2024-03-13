@@ -30,7 +30,7 @@ $required_fields =  array(
 
 $limit = (!empty($_POST['limit']) && is_numeric($_POST['limit']) && $_POST['limit'] > 0 && $_POST['limit'] <= 50 ? Wo_Secure($_POST['limit']) : 20);
 $after_post_id = (!empty($_POST['after_post_id']) && is_numeric($_POST['after_post_id']) && $_POST['after_post_id'] > 0 ? Wo_Secure($_POST['after_post_id']) : 0);
-
+$is_pin_post = $_POST['pin'];
 if (!empty($_POST['type']) && in_array($_POST['type'], $required_fields)) {
 	if ($_POST['type'] != 'get_news_feed' && $_POST['type'] != 'saved' && $_POST['type'] != 'hashtag' && $_POST['type'] != 'get_random_groups' && $_POST['type'] != 'get_random_pages' && $_POST['type'] != 'get_random_videos') {
 		if (empty($_POST['id']) || !is_numeric($_POST['id']) || $_POST['id'] < 1) {
@@ -159,6 +159,8 @@ if (!empty($_POST['type']) && in_array($_POST['type'], $required_fields)) {
                 'after_post_id' => $after_post_id,
                 'placement' => 'multi_image_post'
             );
+            if (isset($is_pin_post) && $is_pin_post == 1)
+                $postsData['pin'] = 1 ;
 			$posts = Wo_GetPosts($postsData);
 			foreach ($posts as $key => $value) {
 				$posts[$key]['shared_info'] = null;
